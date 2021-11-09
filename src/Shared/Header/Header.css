@@ -1,0 +1,19 @@
+.navItem a {
+  text-decoration: none;
+  margin-right: 13px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+.navItem .active {
+  background: #64ddafc9;
+  padding: 5px 15px 7px 15px;
+  border-radius: 6px;
+  color: #191919;
+}
+.haderIcon i {
+  font-size: 25px;
+  color: rgb(58, 58, 58);
+  margin-right: 25px;
+  cursor: pointer;
+}
