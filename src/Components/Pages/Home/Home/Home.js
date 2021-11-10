@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../../../../Shared/Footer/Footer';
 import Header from '../../../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
+import Flexibility from '../Flexibility/Flexibility';
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
         <div>
             <Header></Header>
             <Banner></Banner>
+            <Flexibility></Flexibility>
             <Footer></Footer>
         </div>
     )

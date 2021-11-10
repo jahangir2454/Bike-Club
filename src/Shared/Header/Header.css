@@ -18,3 +18,9 @@
   margin-right: 25px;
   cursor: pointer;
 }
+.userimg img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}

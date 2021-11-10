@@ -1,0 +1,40 @@
+.gooleIcon button i {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  line-height: 40px;
+  color: #33ad7f;
+  font-size: 20px;
+}
+.loginform input {
+  width: 90%;
+  margin: 7px 0;
+  padding: 13px;
+  border: none;
+  outline: none;
+  background: none;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+.formbtn {
+  border: none;
+  outline: none;
+  background: none;
+  background: #fff;
+  padding: 10px 0;
+  color: #33ad7f;
+  font-size: 18px;
+  font-weight: 400;
+  width: 70%;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.formbtn:hover {
+  background: #191919;
+  color: #fff;
+}
