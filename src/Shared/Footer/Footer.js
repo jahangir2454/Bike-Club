@@ -40,7 +40,7 @@ const Footer = () => {
                        </Grid>
                        <Grid item xs={12} md={5}>
                         <Box sx={{width:'100%',position:'relative'}}>
-                        <input style={input} type="text"/>
+                        <input placeholder="Enter your Email" style={input} type="text"/>
                         <button className='footer-btn'>submit</button>
                         </Box>
                        </Grid>

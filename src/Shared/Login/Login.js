@@ -21,14 +21,17 @@ const loginImg ={
 const Login = () => {
     const location = useLocation();
     const history = useHistory();
-    const {googleSignIn,login,error} = useAuth();
+    const {googleSignIn,login,error,githubLogin} = useAuth();
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         login(data.email,data.password,location,history)
     };
     const hendlegoog = ()=>{
         googleSignIn(location,history)
-    }
+    };
+    const githubLog=()=>{
+        githubLogin(location,history)
+    };
     return (
         <Box style={loginImg}>
             <Container>
@@ -40,7 +43,7 @@ const Login = () => {
                       </Typography>
                       <Box sx={{my:1}} className="gooleIcon">
                           <Button onClick={hendlegoog}><i className="fab fa-google"></i></Button>
-                          <Button><i className="fab fa-google"></i></Button>
+                          <Button onClick={githubLog}><i className="fab fa-github"></i></Button>
                       </Box>
                       <Box sx={{my:2}}>
                           <NavLink  style={{marginRight:'15px',textDecoration:'none',color:'white',fontWeight:'500',fontSize:'20px'}} to='/login'>SIGN IN</NavLink>

@@ -21,8 +21,10 @@ const loginImg ={
 const Signup = () => {
     const location = useLocation();
     const history = useHistory();
-    const {googleSignIn,createUser,error,user} = useAuth();
+    const {googleSignIn,createUser,error,user,githubLogin} = useAuth();
     const { register, handleSubmit } = useForm();
+
+    // email & password signUp
     const onSubmit = data => {
         if(data.password !== data.password2) {
             alert('password not metch')
@@ -30,10 +32,17 @@ const Signup = () => {
         }
         createUser(data.email,data.password,data.name,location,history);
     };
+
+    // google signUp
     console.log(user)
     const handleGoogle = () => {
         googleSignIn(location,history);
-    }
+    };
+    
+    // github signUp
+    const githublog=()=>{
+        githubLogin(location,history)
+    };
     return (
         <Box style={loginImg}>
             <Container>
@@ -45,7 +54,7 @@ const Signup = () => {
                       </Typography>
                       <Box sx={{my:1}} className="gooleIcon">
                           <Button onClick={handleGoogle}><i className="fab fa-google"></i></Button>
-                          <Button><i className="fab fa-google"></i></Button>
+                          <Button onClick={githublog}><i className="fab fa-github"></i></Button>
                       </Box>
                       <Box sx={{my:2}}>
                           <NavLink  style={{marginRight:'15px',textDecoration:'none',color:'white',fontWeight:'500',fontSize:'20px'}} to='/login'>SIGN IN</NavLink>

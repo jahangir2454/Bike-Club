@@ -1,5 +1,5 @@
 import Myinitializer from '../Firebase/firebase.init';
-import { getAuth, signInWithPopup, GoogleAuthProvider ,signOut,onAuthStateChanged,createUserWithEmailAndPassword ,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider ,signOut,onAuthStateChanged,createUserWithEmailAndPassword ,signInWithEmailAndPassword,updateProfile,GithubAuthProvider  } from "firebase/auth";
 import { useEffect, useState } from 'react';
 import set from 'set-value';
 
@@ -12,6 +12,7 @@ const useFirebase = () => {
     const [load,setLoad] = useState(true)
    const auth = getAuth();
    const googleProvider = new GoogleAuthProvider();
+   const githubProvider = new GithubAuthProvider()
 
 //    ===========================google sign in start ===========================
 const googleSignIn = (location,history)=>{
@@ -26,6 +27,21 @@ const googleSignIn = (location,history)=>{
         setError(error.message);
     }).finally(()=>{
         setLoad(false);
+    })
+}
+// ====================github login ===========================
+const githubLogin = (location,history)=>{
+    setLoad(true);
+    signInWithPopup(auth,githubProvider)
+    .then(result=>{
+        setUser(result.user)
+        const lock = location?.state?.from||'/';
+        history.push(lock)
+        setError('')
+    }).catch(error=>{
+        setError(error.message)
+    }).finally(()=>{
+        setLoad(false)
     })
 }
 // ========================onAuthStateChanged ============================
@@ -93,6 +109,7 @@ return{
     googleSignIn,
     createUser,
     logout,
+    githubLogin,
     login,
     load,
     error,
