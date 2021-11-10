@@ -15,7 +15,7 @@ const Header = () => {
                    />
                    <Box className="navItem">
                        <NavLink to='/home' activeClassName="active">Home</NavLink>
-                       <NavLink to='/about' activeClassName="active">about</NavLink>
+                       <NavLink to='/dashboard' activeClassName="active">Dashboard</NavLink>
                        <NavLink to='/contact' activeClassName="active">contact</NavLink>
                        <NavLink to='/blog' activeClassName="active">blog</NavLink>
                    </Box>
