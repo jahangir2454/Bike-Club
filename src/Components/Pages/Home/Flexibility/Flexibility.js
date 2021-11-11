@@ -1,6 +1,6 @@
 import { Container, Grid, Typography,Box } from '@mui/material'
 import React from 'react';
-import haeading from '../../../../image/heading.png'
+
 
 const Flexibility = () => {
     return (
