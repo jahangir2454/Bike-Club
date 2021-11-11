@@ -1,0 +1,9 @@
+.fa-pencil-alt {
+  color: #33ad7f;
+  cursor: pointer;
+}
+.fa-trash-alt {
+  color: #d00000;
+  margin-left: 10px;
+  cursor: pointer;
+}

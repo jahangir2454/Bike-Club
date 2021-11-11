@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Header from '../../../Shared/Header/Header';
+import AllItems from './AllItems/AllItems';
 
 const Explore = () => {
     return (
         <div>
-            <h3>thsi is explore</h3>
+            <Header></Header>
+            <AllItems></AllItems>
         </div>
     )
 }
 
-export default Explore
+export default Explore;

@@ -9,6 +9,7 @@ Myinitializer();
 const useFirebase = () => {
     const [user,setUser] = useState({});
     const [error,setError] = useState('')
+    const [admin,setAdmin] = useState(false)
     const [load,setLoad] = useState(true)
    const auth = getAuth();
    const googleProvider = new GoogleAuthProvider();
@@ -19,7 +20,8 @@ const googleSignIn = (location,history)=>{
     setLoad(true)
     signInWithPopup(auth, googleProvider)
     .then(result=>{
-        setUser(result.user);
+        const user= result.user;
+        saveUserS(user.email,user.displayName)
         const lock = location?.state?.from||'/';
         history.push(lock)
         setError('')
@@ -62,6 +64,7 @@ const createUser = (email, password,name,location,history)=>{
     createUserWithEmailAndPassword (auth, email, password)
     .then(result=>{
         setUser (result.user)
+        saveUser(email,name)
         updateProfile(auth.currentUser,{
             displayName:name
         }).then(()=>{
@@ -105,12 +108,43 @@ const logout = ()=>{
         setLoad(false)
     })
 }
+// database save user =================
+const saveUser = (email,name)=>{
+    const newUser = {email,name}
+    setLoad(true)
+    fetch('http://localhost:5000/allUser',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(newUser)
+    })
+    .then()
+    setLoad(false)
+}
+const saveUserS = (email,name)=>{
+    const newUser = {email,name}
+    setLoad(true)
+    fetch('http://localhost:5000/allUser',{
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(newUser)
+    })
+    .then()
+    setLoad(false)
+}
+useEffect(()=>{
+    fetch(`http://localhost:5000/admin/${user.email}`)
+    .then(res=>res.json())
+    .then(data=>{
+       setAdmin(data.admin)
+    })
+},[user.email])
 return{
     googleSignIn,
     createUser,
     logout,
     githubLogin,
     login,
+    admin,
     load,
     error,
     user,

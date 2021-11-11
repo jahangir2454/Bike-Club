@@ -4,9 +4,11 @@ import Home from './Components/Pages/Home/Home/Home';
 import Dashboard from './Components/Pages/Dashboard/Dashboard/Dashboard';
 import Login from './Shared/Login/Login';
 import Signup from './Shared/Signup/Signup';
-import Header from './Shared/Header/Header';
-import AuthProvider, { AuthContext } from './Context/AuthProvider';
 import PrivateRoute from './Components/Pages/PrivateRoute/PrivateRoute';
+import Explore from './Components/Pages/Explore/Explore';
+import AuthProvider from './Context/AuthProvider';
+import PurchaseItem from './Components/Pages/Purchase/PurchaseItem/PurchaseItem';
+
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          <PrivateRoute path="/purchase/:id">
+            <PurchaseItem></PurchaseItem>
+          </PrivateRoute>
+          <PrivateRoute path="/explore">
+            <Explore></Explore>
+          </PrivateRoute>
           <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
           </PrivateRoute>

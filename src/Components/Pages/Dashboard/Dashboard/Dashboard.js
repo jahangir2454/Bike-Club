@@ -9,12 +9,15 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import useAuth from '../../../../Hooks/useAuth';
+import BilPay from '../BilPay/BilPay';
+import Review from '../Review/Review';
+import MyOder from '../MyOder/MyOder';
 
 
 
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
-    const {logout} = useAuth();
+    const {logout,admin} = useAuth();
     const [dashboard,setDashboard] = useState(false);
     const handleIcon = ()=>{
         dashboard ?setDashboard(false):setDashboard(true);
@@ -26,10 +29,17 @@ const Dashboard = () => {
                 <Box className={dashboard?"dashboard1":"dashboard"}>
                       <Box className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',my:2,width:'100%'}}>
                       <NavLink to='/'>Home</NavLink>
+                     {admin&& <Box  className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',width:'100%'}}>
                       <NavLink to={`${url}/makeAddmin`}>Make Admin</NavLink>
                       <NavLink to={`${url}/manageAll`}>Manage All Orders</NavLink>
                       <NavLink to={`${url}/addProduct`}>Add A Product</NavLink>
                       <NavLink to={`${url}/manageProducts`}>Manage Products</NavLink>
+                      </Box>}
+                      {!admin&&<Box className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',width:'100%'}}>
+                      <NavLink to={`${url}/payment`}>Payment</NavLink>
+                      <NavLink to={`${url}/review`}>Review</NavLink>
+                      <NavLink to={`${url}/myOder`}>MyOder</NavLink>
+                      </Box>}
                       <NavLink onClick={logout} to='/login'>Logout</NavLink>
                       </Box>
                     </Box>
@@ -53,6 +63,15 @@ const Dashboard = () => {
                     </Route>
                     <Route  path={`${path}/manageProducts`}>
                      <ManageProducts></ManageProducts>
+                    </Route>
+                    <Route path={`${path}/payment`}>
+                     <BilPay></BilPay>
+                    </Route>
+                    <Route path={`${path}/review`}>
+                     <Review></Review>
+                    </Route>
+                    <Route path={`${path}/myOder`}>
+                     <MyOder></MyOder>
                     </Route>
                 </Switch>
                 </Grid>

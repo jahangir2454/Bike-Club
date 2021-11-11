@@ -34,7 +34,6 @@ const Signup = () => {
     };
 
     // google signUp
-    console.log(user)
     const handleGoogle = () => {
         googleSignIn(location,history);
     };

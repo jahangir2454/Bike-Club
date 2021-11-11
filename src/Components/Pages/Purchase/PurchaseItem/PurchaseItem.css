@@ -1,0 +1,13 @@
+.addForm {
+  background: #33ad7f;
+  padding: 30px;
+  text-align: center;
+}
+.addForm input {
+  border: none;
+  outline: none;
+  width: 90%;
+
+  border-radius: 10px;
+  text-align: center;
+}
