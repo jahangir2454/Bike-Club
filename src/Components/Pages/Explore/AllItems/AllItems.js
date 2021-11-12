@@ -12,6 +12,7 @@ const AllItems = () => {
             setProducts(data)
         })
     },[])
+    console.log(product)
     return (
         <Box sx={{my:3}}>
             <Container>
@@ -30,28 +31,28 @@ const AllItems = () => {
          </Box>
             <Grid container spacing={2}>
             {
-                product.map(products=><Grid key={products._id} item xs={12} sm={4} md={4}>
+                product.map(products=><Grid key={products?.data?._id} item xs={12} sm={4} md={4}>
                         <Box className="products-card" sx={{m:1,p:2,boxShadow:2,minHeight:'420px',textAlign: 'center'}}>
                             <CardMedia
                                 component="img"
-                                image={products.productImg}
+                                image={products?.data?.productImg}
                             />
                             <Typography sx={{color:'#33ad7f',fontSize:'23px',fontWeight:'400',letterSpacing:'1px'}} variant="h6"> {products.ProductName}</Typography>
                             <Box sx={{display:'flex',justifyContent:'space-around',alignItems: 'center'}}>
                                 <Typography sx={{color:'#33ad7f',fontSize:'20px'}} variant="h6">
-                                   Price: ${products.ProductPrice}
+                                   Price: ${products?.data?.ProductPrice}
                                 </Typography>
                                 <Rating
-                                    initialRating={products.ProductReating}
+                                    initialRating={products?.data?.ProductReating}
                                     emptySymbol="far fa-star icon1"
                                     fullSymbol="fas fa-star icon1"
                                     readonly
                                     />
                             </Box>
                             <Typography sx={{fontSize:'15px',color:'#777',my:1}} variant="subtitle1">
-                                {products.ProductDes.slice(0,120)}
+                                {products?.data?.ProductDes.slice(0,120)}
                             </Typography>
-                            <Link to={`/purchase/${products._id}`}>
+                            <Link to={`/purchase/${products?.data?._id}`}>
                             <button  className="all-btn">Add To Cart</button>
                             </Link>
                             </Box>

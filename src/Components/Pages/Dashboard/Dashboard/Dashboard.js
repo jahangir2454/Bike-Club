@@ -48,7 +48,7 @@ const Dashboard = () => {
              <Box className="dashboardBars">
              {dashboard? <i  onClick={handleIcon} className="fas fa-bars"></i>: <i  onClick={handleIcon} className="fas fa-times"></i>}
              </Box>
-                <Box sx={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100vh',textAlign: 'center'}}>
+                <Box sx={{display: 'flex',justifyContent: 'center',alignItems: 'center',textAlign: 'center'}}>
                 <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                 <Switch>

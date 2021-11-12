@@ -16,14 +16,19 @@ const addback = {
 
 const AddProduct = () => {
     const { register, handleSubmit, reset,watch, formState: { errors }  } = useForm();
+    const date = new Date().toDateString();
     const onSubmit = data => {
-    
+        const newAdd ={
+            data:data,
+            tiem:date,
+        }
+        console.log(newAdd,'addProduct')
       fetch('http://localhost:5000/product',{
           method: 'POST',
           headers:{
               'Content-Type': 'application/json'
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify(newAdd)
       })
       .then(res=>res.json())
       .then(result=>{
@@ -33,6 +38,8 @@ const AddProduct = () => {
           }
       })
   };
+ 
+ 
 //   Alert js
 const popupAlert = ()=>{
     swal({

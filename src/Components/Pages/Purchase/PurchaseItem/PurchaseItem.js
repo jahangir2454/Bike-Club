@@ -11,6 +11,7 @@ import swal from 'sweetalert';
 
 const PurchaseItem = () => {
     const {user} = useAuth();
+    const time= new Date().toDateString();
     const oldValue ={email:user.email,userName:user.displayName,number:'',address:''}
     const [info,setInfo] = useState(oldValue);
     const {id} = useParams();
@@ -33,8 +34,11 @@ const PurchaseItem = () => {
         e.preventDefault();
         const alluer ={
             ...info,
+            status:"pending",
+            time,
             product,
         }
+        
        fetch('http://localhost:5000/oders',{
            method: 'POST',
            headers: {'Content-Type': 'application/json'},
@@ -68,16 +72,16 @@ const popupAlert = ()=>{
                         <Box>
                         <CardMedia
                             component='img'
-                            image={product.productImg}
+                            image={product?.data?.productImg}
                         />
                         </Box>
                         <Box>
                         <Box sx={{display: 'flex',justifyContent:'space-around',alignItems: 'center'}}>
                         <Typography sx={{color:'#33ad7f',my:1}} variant="h3">
-                            {product.ProductName}
+                            {product?.data?.ProductName}
                         </Typography>
                         <Rating
-                            initialRating={product.ProductReating}
+                            initialRating={product?.data?.ProductReating}
                             emptySymbol="far fa-star icon1"
                             fullSymbol="fas fa-star icon1"
                             readonly
@@ -91,9 +95,12 @@ const popupAlert = ()=>{
                            Price:
                         </Typography>
                         <Typography sx={{fontSize:'25px',color:'#33ad7f'}} variant="h6">
-                           $ {product.ProductPrice}
+                           $ {product?.data?.ProductPrice}
                         </Typography>
                        </Box>
+                       <Typography sx={{fontSize:'15px',color:'#777',my:1}} variant="subtitle1">
+                                {product?.data?.ProductDes}
+                            </Typography>
                         </Box>
                    </Grid>
                    <Grid item xs={12} md={6} >

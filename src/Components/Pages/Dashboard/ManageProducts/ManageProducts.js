@@ -1,4 +1,4 @@
-import { CardMedia, Container,Box } from '@mui/material'
+import { CardMedia, Container,Box,Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
 import './ManageProducts.css';
 import swal from 'sweetalert';
+import { useForm } from "react-hook-form";
 
 
 const viewdateils ={
@@ -37,12 +38,12 @@ const ManageProducts = () => {
            
         })
     },[load]);
-   
-    const handledelet = id =>{
+// =======================   delete data
+    const handledelet = (id,method) =>{
         const alertpop = window.confirm('Are you sure you want to delete')
        if(alertpop){
         fetch(`http://localhost:5000/deleteAll/${id}`,{
-            method:'DELETE',
+            method:method,
         })
         .then(res=>res.json())
         .then(data=>{
@@ -52,28 +53,17 @@ const ManageProducts = () => {
         })
        }
     };
-   /*  const popupAlert = ()=>{
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              swal("Poof! Your imaginary file has been deleted!", {
-                icon: "success",
-              });
-            } else {
-              swal("Your imaginary file is safe!");
-            }
-          });
-    } */
+    //============================= uapdate get data
+   
+ console.log(products?.time)
+ console.log(products)
+  
+
     
     return (
         <div>
            <Container>
+           <Typography sx={{color:'#33ad7f',fontSize:'25px',my:2}} variant='h3'>All Product : {products.length}</Typography>
            <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -90,7 +80,7 @@ const ManageProducts = () => {
                     <TableBody>
                     {products.map((row,index) => (
                         <TableRow
-                        key={row._id}
+                        key={row?.data?._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                         <TableCell component="th" scope="row">
@@ -100,14 +90,14 @@ const ManageProducts = () => {
                            <CardMedia
                                component="img"
                                style={{width:'30px',height:'30px',borderRadius:'50%'}}
-                               image={row.productImg}
+                               image={row?.data?.productImg}
                            />
                         </TableCell>
                         <TableCell component="th" scope="row">
-                            {row.ProductName}
+                            {row?.data?.ProductName}
                         </TableCell>
-                        <TableCell align="right">$ {row.ProductPrice}</TableCell>
-                        <TableCell align="right">{row.ProductPrice}</TableCell>
+                        <TableCell align="right">$ {row?.data?.ProductPrice}</TableCell>
+                        <TableCell align="right">{row.tiem}</TableCell>
                         <TableCell align="right">
                             <Link style={ viewdateils } to={`/purchase/${row._id}`}>View Details</Link>
                         </TableCell>
@@ -116,7 +106,7 @@ const ManageProducts = () => {
                             <button sx={{color:'#33ad7f'}} style={deletIcond}>
                             <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <button onClick={()=>handledelet(row._id)} sx={{color:'',mx:2}} style={deletIcond}>
+                            <button onClick={()=>handledelet(row._id,"DELETE")} sx={{color:'',mx:2}} style={deletIcond}>
                             <i class="fas fa-trash-alt"></i>
                             </button>
                             </Box>

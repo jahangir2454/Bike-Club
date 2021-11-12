@@ -14,7 +14,6 @@ const Products = () => {
         })
     },[])
     const producted = product.slice(0,6);
- 
     return (
         <>
        <Container>
@@ -38,12 +37,12 @@ const Products = () => {
                         <Box className="products-card" sx={{m:1,p:2,boxShadow:2,minHeight:'420px',textAlign: 'center'}}>
                             <CardMedia
                                 component="img"
-                                image={products?.productImg}
+                                image={products?.data?.productImg}
                             />
-                            <Typography sx={{color:'#33ad7f',fontSize:'23px',fontWeight:'400',letterSpacing:'1px'}} variant="h6"> {products.ProductName}</Typography>
+                            <Typography sx={{color:'#33ad7f',fontSize:'23px',fontWeight:'400',letterSpacing:'1px'}} variant="h6"> {products?.data?.ProductName}</Typography>
                             <Box sx={{display:'flex',justifyContent:'space-around',alignItems: 'center'}}>
                                 <Typography sx={{color:'#33ad7f',fontSize:'20px'}} variant="h6">
-                                   Price: ${products.ProductPrice}
+                                   Price: ${products?.data?.ProductPrice}
                                 </Typography>
                                 <Rating
                                     initialRating={products?.ProductReating}
@@ -53,7 +52,7 @@ const Products = () => {
                                     />
                             </Box>
                             <Typography sx={{fontSize:'15px',color:'#777',my:1}} variant="subtitle1">
-                                {products?.ProductDes.slice(0,120)}
+                                {products?.data?.ProductDes.slice(0,120)}
                             </Typography>
                             <Link to={`/purchase/${products._id}`}>
                             <button  className="all-btn">Add To Cart</button>

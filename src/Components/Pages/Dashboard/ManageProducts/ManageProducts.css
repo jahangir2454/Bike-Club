@@ -7,3 +7,16 @@
   margin-left: 10px;
   cursor: pointer;
 }
+.updateProduct {
+  background: #33ad7f;
+  padding: 20px;
+  border-radius: 10px;
+}
+.updateProduct input {
+  width: 80%;
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 7px;
+}
