@@ -75,6 +75,7 @@ const ManageAllOders = () => {
            } 
        })
     };
+    console.log(oder,'alloder')
     return (
         <div>
             <h3  style={{color:'#33ad7f'}}>Total Oders: {oder.length}</h3>
@@ -104,7 +105,7 @@ const ManageAllOders = () => {
                             </TableCell>
                             <TableCell align="left">{row.time}</TableCell>
                             <TableCell align="left">{row.email}</TableCell>
-                            <TableCell align="left">{row?.product?.ProductName}</TableCell>
+                            <TableCell align="left">{row?.product?.data?.ProductName}</TableCell>
                             <TableCell align="right">
                                 <button  style={pendingOder}>{row?.status}</button>
                             </TableCell>

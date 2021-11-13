@@ -12,7 +12,6 @@ const AllItems = () => {
             setProducts(data)
         })
     },[])
-    console.log(product)
     return (
         <Box sx={{my:3}}>
             <Container>
@@ -52,7 +51,7 @@ const AllItems = () => {
                             <Typography sx={{fontSize:'15px',color:'#777',my:1}} variant="subtitle1">
                                 {products?.data?.ProductDes.slice(0,120)}
                             </Typography>
-                            <Link to={`/purchase/${products?.data?._id}`}>
+                            <Link to={`/purchase/${products?._id}`}>
                             <button  className="all-btn">Add To Cart</button>
                             </Link>
                             </Box>

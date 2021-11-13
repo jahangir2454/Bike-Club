@@ -13,9 +13,10 @@ const Products = () => {
             setProduct(data)
         })
     },[])
+    
     const producted = product.slice(0,6);
     return (
-        <>
+        <div className="productbg">
        <Container>
          <Box sx={{my:3}}>
          <Grid sx={{justifyContent: 'center',alignItems: 'center',textAlign: 'center'}}  container spacing={2}>            
@@ -34,7 +35,7 @@ const Products = () => {
                {
                    producted.map(products=><Grid  item xs={12} sm={4} md={4}>
                     
-                        <Box className="products-card" sx={{m:1,p:2,boxShadow:2,minHeight:'420px',textAlign: 'center'}}>
+                        <Box className="products-card" sx={{m:1,background:'#fff',p:2,boxShadow:2,minHeight:'420px',textAlign: 'center'}}>
                             <CardMedia
                                 component="img"
                                 image={products?.data?.productImg}
@@ -45,7 +46,7 @@ const Products = () => {
                                    Price: ${products?.data?.ProductPrice}
                                 </Typography>
                                 <Rating
-                                    initialRating={products?.ProductReating}
+                                    initialRating={products?.data?.ProductReating}
                                     emptySymbol="far fa-star icon1"
                                     fullSymbol="fas fa-star icon1"
                                     readonly
@@ -62,7 +63,7 @@ const Products = () => {
                }
            </Grid>
        </Container>
-       </>
+       </div>
     )
 }
 

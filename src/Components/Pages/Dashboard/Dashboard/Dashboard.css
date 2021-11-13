@@ -2,10 +2,10 @@
   display: flex;
   margin-left: 0;
   flex-direction: column;
-  background: #fff;
+  background: #191919;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 100vh;
-  border-top: #33ad7f 5px solid;
+  border-top: rgb(191, 204, 3) 5px solid;
   transition: 0.5s ease-in-out;
   width: 300px;
   padding-left: 15px;
@@ -15,10 +15,10 @@
   transition: 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: #191919;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 100vh;
-  border-top: #33ad7f 5px solid;
+  border-top: rgb(191, 204, 3) 5px solid;
   border-top-right-radius: 3px;
   transition: 0.5s ease-in-out;
   width: 300px;
@@ -31,7 +31,7 @@
   color: #33ad7f;
   margin: 6px;
 }
-.dashboardBars .fa-bars {
+.fa-bars {
   font-size: 30px;
   height: 40px;
   width: 40px;
@@ -39,11 +39,30 @@
   margin: 5px 0 0 15px;
   cursor: pointer;
 }
-.dashboardBars .fa-times {
+.fa-times {
   font-size: 30px;
   height: 40px;
   width: 40px;
   color: #fff;
   margin: 5px 0 0 15px;
   cursor: pointer;
+}
+.active1 {
+  background: #33ad7e25;
+  padding: 10px;
+  border-radius: 10px;
+}
+.all-btn2 {
+  text-align: center;
+  background: #fff;
+  color: #191919 !important;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+}
+.all-btn2:hover {
+  background: #33ad7f;
+  color: #fff !important;
 }

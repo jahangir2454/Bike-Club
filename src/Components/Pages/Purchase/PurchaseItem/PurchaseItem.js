@@ -16,13 +16,18 @@ const PurchaseItem = () => {
     const [info,setInfo] = useState(oldValue);
     const {id} = useParams();
     const [product,setProduct] = useState([]);
+    console.log(id,'done')
+   
     useEffect(() => {
-        fetch(`https://boiling-harbor-34572.herokuapp.com/product/${id}`)
+        fetch(`http://localhost:5000/product/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setProduct(data)
         })
     },[])
+
+
+    console.log(product,'hello')
     const handleBlur = e=>{
         const find = e.target.name;
         const value = e.target.value;
@@ -48,6 +53,7 @@ const PurchaseItem = () => {
        .then(result=>{
            if(result.insertedId){
                popupAlert()
+               
            }
        })
 

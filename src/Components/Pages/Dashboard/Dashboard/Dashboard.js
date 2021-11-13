@@ -30,17 +30,17 @@ const Dashboard = () => {
                       <Box className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',my:2,width:'100%'}}>
                       <NavLink to='/'>Home</NavLink>
                      {admin&& <Box  className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',width:'100%'}}>
-                      <NavLink to={`${url}/makeAddmin`}>Make Admin</NavLink>
-                      <NavLink to={`${url}/manageAll`}>Manage All Orders</NavLink>
-                      <NavLink to={`${url}/addProduct`}>Add A Product</NavLink>
-                      <NavLink to={`${url}/manageProducts`}>Manage Products</NavLink>
+                      <NavLink activeClassName="active1" to={`${url}/makeAddmin`}>Make Admin</NavLink>
+                      <NavLink activeClassName="active1" to={`${url}/manageAll`}>Manage All Orders</NavLink>
+                      <NavLink activeClassName="active1" to={`${url}/addProduct`}>Add A Product</NavLink>
+                      <NavLink activeClassName="active1" to={`${url}/manageProducts`}>Manage Products</NavLink>
                       </Box>}
                       {!admin&&<Box className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',width:'100%'}}>
-                      <NavLink to={`${url}/payment`}>Payment</NavLink>
-                      <NavLink to={`${url}/review`}>Review</NavLink>
-                      <NavLink to={`${url}/myOder`}>MyOder</NavLink>
+                      <NavLink activeClassName="active1" to={`${url}/payment`}>Payment</NavLink>
+                      <NavLink activeClassName="active1" to={`${url}/review`}>Review</NavLink>
+                      <NavLink activeClassName="active1" exact to={`${url}/myOder`}>MyOder</NavLink>
                       </Box>}
-                      <NavLink onClick={logout} to='/login'>Logout</NavLink>
+                      <NavLink className="all-btn2" onClick={logout} to='/login'>Logout</NavLink>
                       </Box>
                     </Box>
          

@@ -15,7 +15,7 @@
 .haderIcon i {
   font-size: 25px;
   color: rgb(58, 58, 58);
-  margin-right: 25px;
+  margin-right: 10px;
   cursor: pointer;
 }
 .userimg img {
@@ -23,4 +23,49 @@
   width: 40px;
   border-radius: 50%;
   border: 1px solid #fff;
+}
+.headerBars {
+  display: none;
+}
+
+@media screen and (max-width: 792px) {
+  .navItem {
+    display: none;
+  }
+  .navItemres {
+    position: absolute;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    top: 30px;
+    left: 0;
+    z-index: 20;
+    background-color: rgb(31, 31, 31);
+    width: 100%;
+    transition: 0.7s ease-in-out;
+  }
+  .navItemres2 {
+    position: absolute;
+    margin-left: -800px;
+    display: flex;
+    z-index: 20;
+    flex-direction: column;
+    top: 30px;
+    width: 100%;
+    left: 0;
+    transition: 0.7s ease-in-out;
+    background-color: rgb(31, 31, 31);
+    width: 100%;
+  }
+  .headerBars {
+    display: block;
+  }
+  .navItemres a {
+    color: #33ad7f;
+    padding: 6px 20px;
+    display: block;
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+  }
 }
