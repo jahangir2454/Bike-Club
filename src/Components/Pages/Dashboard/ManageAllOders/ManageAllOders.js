@@ -7,8 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Container } from '@mui/material';
-import { Box} from '@mui/system';
-
+import { Box, padding } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 
 const viewdateilss ={
@@ -27,7 +27,7 @@ const pendingOder={
     border:'none',
     outline:'none',
     background:'none',
-    backgroundColer:'#48cae4',
+    background:'#48cae4',
     padding:'10px',
     borderRadius:'50px',
     color:'#fff',
