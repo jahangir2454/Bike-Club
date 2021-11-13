@@ -4,7 +4,7 @@ import Header from '../../../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
 import Flexibility from '../Flexibility/Flexibility';
 import Products from '../Products/Products';
-import Review from '../Review/Review';
+import ShowReviews from '../Review/ShowReviews';
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
             <Header></Header>
             <Banner></Banner>
             <Products></Products>
-            <Review></Review>
+            <ShowReviews></ShowReviews>
             <Flexibility></Flexibility>
             <Footer></Footer>
         </div>

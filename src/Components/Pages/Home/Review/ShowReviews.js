@@ -6,10 +6,10 @@ import './Review.css';
 
 
 
-const Review = () => {
+const ShowReviews = () => {
     const [review,setReview] =useState([]);
     useEffect(()=>{
-        fetch('https://boiling-harbor-34572.herokuapp.com')
+        fetch('https://boiling-harbor-34572.herokuapp.com/review')
         .then(res=>res.json())
         .then(data=>{
             setReview(data)
@@ -60,4 +60,4 @@ const Review = () => {
     )
 }
 
-export default Review
+export default ShowReviews;

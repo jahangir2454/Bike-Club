@@ -36,7 +36,7 @@ const Review = () => {
             review:review,
             user:user,
         }
-        fetch('https://boiling-harbor-34572.herokuapp.com',{
+        fetch('https://boiling-harbor-34572.herokuapp.com/review',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(allReview)
