@@ -11,6 +11,7 @@ import useAuth from '../../../../Hooks/useAuth';
 import BilPay from '../BilPay/BilPay';
 import Review from '../Review/Review';
 import MyOder from '../MyOder/MyOder';
+import AdminRoute from '../../PrivateRoute/AdminRoute';
 
 
 
@@ -51,18 +52,18 @@ const Dashboard = () => {
                 <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                 <Switch>
-                    <Route exact path={`${path}/makeAddmin`}>
+                    <AdminRoute exact path={`${path}/makeAddmin`}>
                     <MakeAdmin></MakeAdmin>
-                    </Route>
-                    <Route  path={`${path}/manageAll`}>
+                    </AdminRoute>
+                    <AdminRoute  path={`${path}/manageAll`}>
                      <ManageAllOders></ManageAllOders>
-                    </Route>
-                    <Route  path={`${path}/addProduct`}>
+                    </AdminRoute>
+                    <AdminRoute  path={`${path}/addProduct`}>
                      <AddProduct></AddProduct>
-                    </Route>
-                    <Route  path={`${path}/manageProducts`}>
+                    </AdminRoute>
+                    <AdminRoute  path={`${path}/manageProducts`}>
                      <ManageProducts></ManageProducts>
-                    </Route>
+                    </AdminRoute>
                     <Route path={`${path}/payment`}>
                      <BilPay></BilPay>
                     </Route>
