@@ -17,7 +17,7 @@ const PurchaseItem = () => {
     const {id} = useParams();
     const [product,setProduct] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://boiling-harbor-34572.herokuapp.com/product/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setProduct(data)
@@ -39,7 +39,7 @@ const PurchaseItem = () => {
             product,
         }
         
-       fetch('http://localhost:5000/oders',{
+       fetch('https://boiling-harbor-34572.herokuapp.com/oders',{
            method: 'POST',
            headers: {'Content-Type': 'application/json'},
            body: JSON.stringify(alluer)

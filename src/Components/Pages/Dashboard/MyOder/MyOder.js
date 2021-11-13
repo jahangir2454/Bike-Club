@@ -35,7 +35,7 @@ const MyOder = () => {
     const [oder,setOder] = useState([]);
     const [isLoad,setIsLoad] = useState(false)
     useEffect(() => {
-        fetch(`http://localhost:5000/myOder/${user.email}`)
+        fetch(`https://boiling-harbor-34572.herokuapp.com/myOder/${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             setOder(data)
@@ -45,7 +45,7 @@ const MyOder = () => {
     const handledelet = id=>{
         const sure = window.confirm('Are you sure you want to delete this')
         if(sure){
-            fetch(`http://localhost:5000/myOder/${id}`,{
+            fetch(`https://boiling-harbor-34572.herokuapp.com/myOder/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())

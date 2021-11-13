@@ -23,7 +23,7 @@ const AddProduct = () => {
             tiem:date,
         }
         console.log(newAdd,'addProduct')
-      fetch('http://localhost:5000/product',{
+      fetch('https://boiling-harbor-34572.herokuapp.com/product',{
           method: 'POST',
           headers:{
               'Content-Type': 'application/json'

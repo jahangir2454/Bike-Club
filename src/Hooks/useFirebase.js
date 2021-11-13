@@ -112,7 +112,7 @@ const logout = ()=>{
 const saveUser = (email,name)=>{
     const newUser = {email,name}
     setLoad(true)
-    fetch('http://localhost:5000/allUser',{
+    fetch('https://boiling-harbor-34572.herokuapp.com/allUser',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newUser)
@@ -123,7 +123,7 @@ const saveUser = (email,name)=>{
 const saveUserS = (email,name)=>{
     const newUser = {email,name}
     setLoad(true)
-    fetch('http://localhost:5000/allUser',{
+    fetch('https://boiling-harbor-34572.herokuapp.com/allUser',{
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newUser)
@@ -132,7 +132,7 @@ const saveUserS = (email,name)=>{
     setLoad(false)
 }
 useEffect(()=>{
-    fetch(`http://localhost:5000/admin/${user.email}`)
+    fetch(`https://boiling-harbor-34572.herokuapp.com/admin/${user.email}`)
     .then(res=>res.json())
     .then(data=>{
        setAdmin(data.admin)

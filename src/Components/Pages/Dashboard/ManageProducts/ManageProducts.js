@@ -31,7 +31,7 @@ const ManageProducts = () => {
     const [products,setProducts] = useState([]);
     const [load,setLoad] = useState(false);
     useEffect(() =>{
-        fetch('http://localhost:5000/product')
+        fetch('https://boiling-harbor-34572.herokuapp.com/product')
         .then(res=>res.json())
         .then(data=>{
             setProducts(data)
@@ -42,7 +42,7 @@ const ManageProducts = () => {
     const handledelet = (id,method) =>{
         const alertpop = window.confirm('Are you sure you want to delete')
        if(alertpop){
-        fetch(`http://localhost:5000/deleteAll/${id}`,{
+        fetch(`https://boiling-harbor-34572.herokuapp.com/deleteAll/${id}`,{
             method:method,
         })
         .then(res=>res.json())

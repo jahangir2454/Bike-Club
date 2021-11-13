@@ -27,7 +27,7 @@ const MakeAdmin = () => {
         e.preventDefault();
         const user ={email}
         console.log(user);
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://boiling-harbor-34572.herokuapp.com/users/admin',{
             method: 'PUT',
             headers:{
                 'Content-Type':'application/json'

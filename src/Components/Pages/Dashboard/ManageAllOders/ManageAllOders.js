@@ -44,7 +44,7 @@ const ManageAllOders = () => {
     const [load,setLoad] = useState(false)
     const [oder,setOders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/manageOder')
+        fetch('https://boiling-harbor-34572.herokuapp.com/manageOder')
         .then(res=>res.json())
         .then(data=>{
             setOders(data)
@@ -53,7 +53,7 @@ const ManageAllOders = () => {
     const handledelet = id =>{
       const sure =window.confirm('Are you sure you want to delete this item');
       if(sure){
-        fetch(`http://localhost:5000/manageOder/${id}`,{
+        fetch(`https://boiling-harbor-34572.herokuapp.com/manageOder/${id}`,{
             method: 'DELETE'
         })
         .then(res=>res.json())
@@ -64,7 +64,7 @@ const ManageAllOders = () => {
       }
     };
     const handleAp = item => {
-       fetch(`http://localhost:5000/manageOder/${item}`,{
+       fetch(`https://boiling-harbor-34572.herokuapp.com/manageOder/${item}`,{
            method: 'PUT',
        })
        .then(res=>res.json())
