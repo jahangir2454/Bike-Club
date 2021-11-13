@@ -1,4 +1,4 @@
-import { Container, Grid,Box,Typography, CardMedia, Button } from '@mui/material'
+import { Container, Grid,Box,Typography, CardMedia} from '@mui/material'
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
@@ -33,7 +33,7 @@ const Products = () => {
          </Box>
            <Grid container spacing={2}>
                {
-                   producted.map(products=><Grid  item xs={12} sm={4} md={4}>
+                   producted.map(products=><Grid  item xs={12} sm={6} md={4}>
                     
                         <Box className="products-card" sx={{m:1,background:'#fff',p:2,boxShadow:2,minHeight:'420px',textAlign: 'center'}}>
                             <CardMedia

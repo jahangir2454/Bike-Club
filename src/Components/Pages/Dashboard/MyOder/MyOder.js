@@ -13,7 +13,7 @@ const pendingOder={
     border:'none',
     outline:'none',
     background:'none',
-    background:'#48cae4',
+    backgroundColor:'#48cae4',
     padding:'10px',
     borderRadius:'50px',
     color:'#fff',
@@ -40,8 +40,7 @@ const MyOder = () => {
         .then(data=>{
             setOder(data)
         })
-    },[isLoad]);
-    console.log(oder)
+    },[isLoad,user.email]);
     const handledelet = id=>{
         const sure = window.confirm('Are you sure you want to delete this')
         if(sure){

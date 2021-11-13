@@ -24,10 +24,10 @@ const PurchaseItem = () => {
         .then(data=>{
             setProduct(data)
         })
-    },[])
+    },[id])
 
 
-    console.log(product,'hello')
+    
     const handleBlur = e=>{
         const find = e.target.name;
         const value = e.target.value;
@@ -120,7 +120,7 @@ const popupAlert = ()=>{
                                 <input onBlur={handleBlur} name="userName" type="text" defaultValue={user.displayName}/>
                                 <input onBlur={handleBlur} name="address" type="text" placeholder="Enter your address"/>
                                 <input onBlur={handleBlur} name="number" type="number" placeholder="Enter your number"/>
-                                <button type="submit" className="formbtn">Add To Cart</button>
+                                <button  type="submit" className="formbtn">Add To Cart</button>
                             </form>
                      </Box>
                      </Box>

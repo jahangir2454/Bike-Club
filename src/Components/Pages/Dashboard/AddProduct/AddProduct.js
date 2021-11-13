@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container,Box, Grid, Typography} from '@mui/material';
 import { useForm } from "react-hook-form";
 import './AddProduct.css';
@@ -15,7 +15,7 @@ const addback = {
 }
 
 const AddProduct = () => {
-    const { register, handleSubmit, reset,watch, formState: { errors }  } = useForm();
+    const { register, handleSubmit, reset, formState: { errors }  } = useForm();
     const date = new Date().toDateString();
     const onSubmit = data => {
         const newAdd ={

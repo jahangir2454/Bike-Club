@@ -21,7 +21,7 @@ const loginImg ={
 const Signup = () => {
     const location = useLocation();
     const history = useHistory();
-    const {googleSignIn,createUser,error,user,githubLogin} = useAuth();
+    const {googleSignIn,createUser,error,githubLogin} = useAuth();
     const { register, handleSubmit } = useForm();
 
     // email & password signUp

@@ -1,4 +1,4 @@
-import { Container,Box, Grid, Typography, CardMedia } from '@mui/material'
+import { Container,Box, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import './Review.css';
@@ -15,7 +15,6 @@ const ShowReviews = () => {
             setReview(data)
         })
     },[]);
-    console.log(review)
     return (
         <Box>
             <Container>
@@ -30,7 +29,7 @@ const ShowReviews = () => {
                 <Box className="reviewBox">
                 <Grid container spacing={2}>
                    {
-                       review.map(rev=><Grid item xs={12} md={4}>
+                       review.map(rev=><Grid sx={{my:2}} item xs={12} md={4}>
                         <Box className="review-card">
                          <Box className="reviewphoto">
                              {rev?.user?.photoURL? <img src={rev?.user?.photoURL} alt="" />:

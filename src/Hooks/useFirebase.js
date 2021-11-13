@@ -1,7 +1,7 @@
 import Myinitializer from '../Firebase/firebase.init';
 import { getAuth, signInWithPopup, GoogleAuthProvider ,signOut,onAuthStateChanged,createUserWithEmailAndPassword ,signInWithEmailAndPassword,updateProfile,GithubAuthProvider  } from "firebase/auth";
 import { useEffect, useState } from 'react';
-import set from 'set-value';
+
 
 
 
@@ -57,7 +57,7 @@ useEffect(()=>{
         }
         setLoad(false)
     })
-},[])
+},[auth])
 // ==========================sign up =========================
 const createUser = (email, password,name,location,history)=>{
     setLoad(true);

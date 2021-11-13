@@ -5,10 +5,9 @@ The site is [The best shopping site (Bikes Clubs)](https://bikes-clubs.web.app/)
 ## Why you’ll love with Bikes Clubs
 
 - [Make progress quickly]
-- [Personalized Travel]
+- [Personalized Shopping]
 - [Stay motivated]
 - [Simple and easy your shopping]
-- [Domestic Air Tickets]
 - [Have fun with it!]
 
 ### This site create by

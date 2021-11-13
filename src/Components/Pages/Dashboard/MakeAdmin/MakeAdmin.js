@@ -2,10 +2,8 @@
 import React from 'react';
 import  { useState } from 'react';
 import { Container,Box, Grid, Typography} from '@mui/material';
-import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
-    const { register, handleSubmit, reset,watch, formState: { errors }  } = useForm();
     const [email,setEmail] = useState(' ')
     const makeAd = {
         background:`url(https://cdn.shopify.com/s/files/1/0434/2431/7599/files/slider-2_2000x_1_2000x.jpg?v=1595491220)`,

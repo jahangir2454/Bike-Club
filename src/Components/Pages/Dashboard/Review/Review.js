@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { CardMedia, Container,Box,Grid, Typography } from '@mui/material'
-import { padding } from '@mui/system';
+import { Container,Box,Grid, Typography } from '@mui/material'
 import './Review.css';
 import Rating from '@mui/material/Rating';
 import useAuth from '../../../../Hooks/useAuth';

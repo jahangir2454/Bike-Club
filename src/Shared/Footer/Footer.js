@@ -50,7 +50,7 @@ const Footer = () => {
         <Box sx={{background:'#3b3b3b',py:3}}>
             <Container>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={6} sm={6} md={3}>
                         <Box>
                             <img style={{width:'auto'}} src={logo} alt="" />
                             <Typography sx={{fontWeight:'300',color:'#a0a0a0',fontSize:'14px',marginTop:'10px',lineHeight:'26px'}} variant="subtitle1">
@@ -58,7 +58,7 @@ const Footer = () => {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={2}>
+                    <Grid item xs={6} sm={6} md={2}>
                         <Box>
                             <Typography sx={{color:'#fff',textTransform:'capitalize',letterSpacing:'2px',fontSize:'20px',fontWeight:'500',marginBottom:'10px'}} variant="h2">
                             Shop by
@@ -80,7 +80,7 @@ const Footer = () => {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={2}>
+                    <Grid item xs={6} sm={6} md={2}>
                         <Box>
                             <Typography sx={{color:'#fff',textTransform:'capitalize',letterSpacing:'2px',fontSize:'20px',fontWeight:'500',marginBottom:'10px'}} variant="h2">
                             Products
@@ -102,7 +102,7 @@ const Footer = () => {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={2}>
+                    <Grid item xs={6} sm={6} md={2}>
                         <Box>
                             <Typography sx={{color:'#fff',textTransform:'capitalize',letterSpacing:'2px',fontSize:'20px',fontWeight:'500',marginBottom:'10px'}} variant="h2">
                             Our Company
@@ -124,8 +124,8 @@ const Footer = () => {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <Box>
+                    <Grid  item xs={12} sm={6} md={3}>
+                        <Box >
                             <Typography sx={{color:'#fff',textTransform:'capitalize',letterSpacing:'2px',fontSize:'20px',fontWeight:'500',marginBottom:'10px'}} variant="h2">
                             Contact
                             </Typography>
