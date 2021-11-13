@@ -19,7 +19,7 @@ const PurchaseItem = () => {
     console.log(id,'done')
    
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://boiling-harbor-34572.herokuapp.com/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setProduct(data)
