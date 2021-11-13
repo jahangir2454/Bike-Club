@@ -12,6 +12,7 @@ import BilPay from '../BilPay/BilPay';
 import Review from '../Review/Review';
 import MyOder from '../MyOder/MyOder';
 import AdminRoute from '../../PrivateRoute/AdminRoute';
+import Banner from '../../Home/Banner/Banner';
 
 
 
@@ -30,6 +31,7 @@ const Dashboard = () => {
                       <Box className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',my:2,width:'100%'}}>
                       <NavLink to='/'>Home</NavLink>
                      {admin&& <Box  className="dashboard3" sx={{display:'flex',flexDirection: 'column',justifyContent: 'center',width:'100%'}}>
+                      <NavLink  to={`${url}`}>dashboard</NavLink>
                       <NavLink activeClassName="active1" to={`${url}/makeAddmin`}>Make Admin</NavLink>
                       <NavLink activeClassName="active1" to={`${url}/manageAll`}>Manage All Orders</NavLink>
                       <NavLink activeClassName="active1" to={`${url}/addProduct`}>Add A Product</NavLink>
@@ -52,6 +54,9 @@ const Dashboard = () => {
                 <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                 <Switch>
+                    <Route exact path={`${path}`}>
+                    <Banner></Banner>
+                    </Route>
                     <AdminRoute exact path={`${path}/makeAddmin`}>
                     <MakeAdmin></MakeAdmin>
                     </AdminRoute>
